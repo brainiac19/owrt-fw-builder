@@ -1,0 +1,11 @@
+--- a/feeds/custom/v2dat/Makefile
++++ b/feeds/custom/v2dat/Makefile
+@@ -26,7 +26,7 @@
+ GO_PKG:=github.com/urlesistiana/v2dat
+ 
+ include $(INCLUDE_DIR)/package.mk
+-include $(TOPDIR)/feeds/packages/kiddin9/golang/golang-package.mk
++include $(TOPDIR)/feeds/packages/lang/golang/golang-package.mk
+ 
+ define Package/v2dat
+   SECTION:=utils

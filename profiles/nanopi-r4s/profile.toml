@@ -1,0 +1,30 @@
+# profiles/nanopi-r4s/profile.toml
+
+# ── Upstream Source ───────────────────────────────────────────────────────────
+repo   = "https://github.com/immortalwrt/immortalwrt.git"
+branch = "openwrt-25.12"
+
+# ── Device Target ─────────────────────────────────────────────────────────────
+kernel_target = "rockchip"              # matches target/linux/<kernel_target>/
+artifact_path = "rockchip/armv8"        # relative to bin/targets/
+display_name  = "NanoPi R4S (Rockchip RK3399)"
+
+# ── Packages ──────────────────────────────────────────────────────────────────
+packages = [
+  "kmod-usb2", "kmod-usb3", "kmod-tun", "kmod-hwmon-pwmfan",
+  "coreutils-sleep", "coreutils-date", "parted", "losetup", "e2fsprogs",
+  "autocore", "ncat", "zoneinfo-asia", "smartmontools", "fping", "usbutils", "tar", "bash", "netbird", "htop", "procps-ng-watch", "iperf3",
+  "collectd", "collectd-mod-conntrack", "collectd-mod-contextswitch", "collectd-mod-cpu", "collectd-mod-cpufreq", "collectd-mod-df", "collectd-mod-dhcpleases", "collectd-mod-disk", "collectd-mod-exec", "collectd-mod-interface", "collectd-mod-load", "collectd-mod-memory", "collectd-mod-network", "collectd-mod-ping", "collectd-mod-thermal", "collectd-mod-uptime",
+  "luci-light", "luci-mod-admin-full", "luci-compat", "luci-theme-bootstrap",
+  "luci-app-adguardhome", "luci-app-arpbind", "luci-app-attendedsysupgrade", "luci-app-autoreboot", "luci-app-bandix", "luci-app-cpufreq", "luci-app-cpulimit", "luci-app-diskman", "luci-app-eqosplus", "luci-app-firewall", "luci-app-hd-idle", "luci-app-lucky", "luci-app-mosdns", "luci-app-openclash", "luci-app-package-manager", "luci-app-qosmate", "luci-app-socat", "luci-app-turboacc", "luci-app-upnp", "luci-app-easytier"
+]
+exclude_packages = []
+
+# ── Extra Feeds ───────────────────────────────────────────────────────────────
+# Pinned to specific commit is recommended: e.g. https://github.com/...^commit
+extra_feeds = [
+  "src-git custom https://github.com/brainiac19/openwrt-packages.git",
+]
+
+# ── Shared Built-in Scripts ───────────────────────────────────────────────────
+shared_uci_defaults = ["01-expand-rootfs"]
